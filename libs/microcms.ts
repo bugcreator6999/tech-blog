@@ -1,5 +1,5 @@
 import { BlogPostType } from '@/types/blogPost';
-import { createClient } from 'microcms-js-sdk';
+import { MicroCMSQueries, createClient } from 'microcms-js-sdk';
 
 if (!process.env.API_KEY) {
     throw new Error("need api key")
@@ -25,3 +25,16 @@ export const getBlogs = async () => {
         contents: blogList.contents
     }
 }
+
+
+export const getBlogDetail = async (
+    contentId: string,
+    queries?: MicroCMSQueries
+) => {
+    const detailData = await client.getListDetail<BlogPostType>({
+        endpoint: "blogs",
+        contentId,
+        queries,
+    });
+    return detailData;
+};
