@@ -4,6 +4,8 @@ import Image from "next/image";
 import React from "react";
 import parse from "html-react-parser";
 import { format } from "date-fns";
+import styles from "../../styles/page.module.css";
+import Link from "next/link";
 
 export default async function BlogDetail({
   params: { id },
@@ -13,8 +15,12 @@ export default async function BlogDetail({
   const blogDetail: BlogPostType = await getBlogDetail(id);
   return (
     <>
-      <h1>{blogDetail.title}</h1>
-      <p>{format(new Date(blogDetail.createdAt), "yyyy-MM-dd HH:mm")}</p>
+      <div className="title">
+        <h1>{blogDetail.title}</h1>
+      </div>
+      <div className="createdate">
+        <p>{format(new Date(blogDetail.createdAt), "yyyy-MM-dd HH:mm")}</p>
+      </div>
       <div className="detailImage">
         <Image
           src={blogDetail.eyecatch?.url || "/no-image.png"}
@@ -23,7 +29,10 @@ export default async function BlogDetail({
           alt={blogDetail.title}
         />
       </div>
-      {parse(blogDetail.content)}
+      <div className="detail">{parse(blogDetail.content)}</div>
+      <div className={styles.detailBack}>
+        <Link href="/blog">戻る</Link>
+      </div>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
+import styles from "../styles/page.module.css";
 
 // TODO : thumnail & catedory
 interface Props {
@@ -22,20 +23,28 @@ const BlogListCard = ({
 }: Props) => {
   return (
     <>
-      <Link href={`/blog/${id}`}>
-        <div className="">
-          <div className="thumnail">
-            <Image src={thumnail} width={320} height={200} alt={title} />
+      <div className={styles.blogCard}>
+        <Link href={`/blog/${id}`}>
+          <div className={styles.cardWrap}>
+            <div className={styles.cardThumnail}>
+              <Image src={thumnail} width={320} height={200} alt={title} />
+            </div>
+            <div className={styles.cardText}>
+              <div>
+                <h2 className={styles.cardTitle}>{title}</h2>
+              </div>
+              <div className={styles.createdate}>
+                <h3>
+                  作成日 : {format(new Date(createAt), "yyyy-MM-dd HH:mm")}
+                </h3>
+                <h3>
+                  更新日 : {format(new Date(updatedAt), "yyyy-MM-dd HH:mm")}
+                </h3>
+              </div>
+            </div>
           </div>
-          <div className="title">
-            <h2 className="cardTitle">{title}</h2>
-          </div>
-          <div className="date">
-            <h3>作成日 : {format(new Date(createAt), "yyyy-MM-dd HH:mm")}</h3>
-            <h3>更新日 : {format(new Date(updatedAt), "yyyy-MM-dd HH:mm")}</h3>
-          </div>
-        </div>
-      </Link>
+        </Link>
+      </div>
     </>
   );
 };
