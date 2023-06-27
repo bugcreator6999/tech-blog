@@ -1,6 +1,7 @@
 import { getBlogDetail } from "@/libs/microcms";
 import { BlogPostType } from "@/types/blogPost";
 import React from "react";
+import parse from "html-react-parser";
 
 export default async function BlogDetail({
   params: { id },
@@ -12,7 +13,7 @@ export default async function BlogDetail({
     <>
       <h1>{blogDetail.title}</h1>
       <p>{blogDetail.createdAt}</p>
-      <p>{blogDetail.content}</p>
+      {parse(blogDetail.content)}
     </>
   );
 }

@@ -21,10 +21,11 @@ export const getBlogs = async () => {
     const blogList = await client.getList<BlogPostType>({
         endpoint: "blogs"
     })
+    console.log(blogList);
     return {
         contents: blogList.contents
-    }
-}
+    };
+};
 
 
 export const getBlogDetail = async (
