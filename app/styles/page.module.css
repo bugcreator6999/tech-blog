@@ -1,5 +1,37 @@
 /* blog list page for pc */
 @media screen and (min-width: 750px) {
+  .topTitle {
+    font-size: 5rem;
+  }
+  .topSubTitle {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .topArrow {
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .aboutMain {
+    width: 70%;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  .aboutTitle {
+    font-size: 3rem;
+  }
+  .aboutArrow {
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .aboutPara {
+    line-height: 1.7rem;
+  }
+
   .blogCard {
     display: block;
     margin: 30px;

@@ -19,7 +19,7 @@ const Navbar = () => {
         <span className={mPlus400.className}>ブログ</span>
       </Link>
       <Link href="/about" className={`${styles.navText} ${styles.lastNav}`}>
-        <span className={mPlus400.className}>このサイトについて</span>
+        <span className={mPlus400.className}>わたしついて</span>
       </Link>
     </div>
   );
