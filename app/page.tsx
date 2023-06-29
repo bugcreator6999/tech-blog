@@ -17,6 +17,14 @@ export default async function Home() {
     <main className="flex min-h-screen flex-col items-center p-24">
       <div className={mPlus400.className}>
         <h1 className={styles.topTitle}>bugCreatos - TechBlog</h1>
+        <div className={styles.topHeroImage}>
+          <Image
+            src={"/topHeroImage.png"}
+            layout="fill"
+            objectFit="contain"
+            alt="ポートフォリオとReact / Next.jsのTechBlog "
+          />
+        </div>
         <h2 className={styles.topSubTitle}>
           # ポートフォリオとReact / Next.jsのTechBlog #
         </h2>
