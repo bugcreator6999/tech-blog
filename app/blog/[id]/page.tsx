@@ -1,4 +1,4 @@
-import { getBlogDetail } from "@/libs/microcms";
+import { getBlogDetail, getBlogs } from "@/libs/microcms";
 import { BlogPostType } from "@/types/blogPost";
 import Image from "next/image";
 import React from "react";
@@ -16,6 +16,14 @@ const mPlus400 = M_PLUS_Rounded_1c({
   subsets: ["latin"],
   display: "swap",
 });
+
+// for SSG
+export async function generateStaticParams() {
+  const { contents } = await getBlogs();
+  return contents.map(({ id }) => ({
+    id,
+  }));
+}
 
 export default async function BlogDetail({
   params: { id },
