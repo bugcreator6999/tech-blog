@@ -34,12 +34,8 @@ const BlogListCard = ({
                 <h2 className={styles.cardTitle}>{title}</h2>
               </div>
               <div className={styles.createdate}>
-                <h3>
-                  作成日 : {format(new Date(createAt), "yyyy-MM-dd HH:mm")}
-                </h3>
-                <h3>
-                  更新日 : {format(new Date(updatedAt), "yyyy-MM-dd HH:mm")}
-                </h3>
+                <h3>作成日 : {format(new Date(createAt), "yyyy-MM-dd")}</h3>
+                <h3>更新日 : {format(new Date(updatedAt), "yyyy-MM-dd")}</h3>
               </div>
             </div>
           </div>

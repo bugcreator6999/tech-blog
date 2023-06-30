@@ -12,7 +12,10 @@ const mPlus400 = M_PLUS_Rounded_1c({
 const aboutPage = () => {
   return (
     <div className={styles.aboutMain}>
-      <div className="flex min-h-screen flex-col items-center p-24">
+      {/* <div className="flex min-h-screen flex-col items-center p-24"> */}
+      <div
+        className={`flex min-h-screen flex-col items-center p-24 ${styles.aboutMain}`}
+      >
         <h1 className={styles.aboutTitle}>
           <span className={mPlus400.className}>わたしについて</span>
         </h1>

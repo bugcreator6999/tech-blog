@@ -18,21 +18,26 @@ export default async function BlogList() {
   console.log(contents);
   return (
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
-    <main className="flex min-h-screen flex-col items-center p-24">
+    // <main className="flex min-h-screen flex-col items-center p-24">
+    <main
+      className={`flex min-h-screen flex-col items-center p-24 ${styles.aboutMain}`}
+    >
       <h2 className={styles.blogListTitle}>
         <span className={mPlus400.className}>記事一覧</span>
       </h2>
       <ul>
         {contents.map((postData: BlogPostType) => {
           return (
-            <BlogListCard
-              key={postData.id}
-              id={postData.id}
-              title={postData.title}
-              createAt={postData.createdAt}
-              updatedAt={postData.updatedAt}
-              thumnail={postData.eyecatch?.url || "/no-image.png"}
-            />
+            <li key={postData.id} className={styles.blogListCard}>
+              <BlogListCard
+                key={postData.id}
+                id={postData.id}
+                title={postData.title}
+                createAt={postData.createdAt}
+                updatedAt={postData.updatedAt}
+                thumnail={postData.eyecatch?.url || "/no-image.png"}
+              />
+            </li>
             // <Link key={postData.id} href={`/blog/${postData.id}`}>
             //   <li key={postData.id}>{postData.title}</li>
             // </Link>
