@@ -6,6 +6,7 @@ import parse from "html-react-parser";
 import { format } from "date-fns";
 import styles from "../../styles/page.module.css";
 import Link from "next/link";
+import "../../styles/code.css";
 
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 
@@ -19,10 +20,21 @@ const mPlus400 = M_PLUS_Rounded_1c({
 
 // for SSG
 export async function generateStaticParams() {
-  const { contents } = await getBlogs();
-  return contents.map(({ id }) => ({
-    id,
-  }));
+  const contents = await getBlogs();
+
+  const id = contents.map((content) => {
+    return {
+      id: content.id,
+    };
+  });
+  return [...id];
+  // return contents.map((content) => ({
+  //   id: content.id,
+  // }));
+
+  // return contents.map(({ id }) => ({
+  //   id,
+  // }));
 }
 
 export default async function BlogDetail({

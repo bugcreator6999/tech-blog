@@ -13,9 +13,13 @@ const mPlus400 = M_PLUS_Rounded_1c({
   display: "swap",
 });
 
+export const revalidate = 0;
+
 export default async function BlogList() {
-  const { contents } = await getBlogs();
-  console.log(contents);
+  // const { contents } = await getBlogs();
+
+  const contents = await getBlogs();
+  // console.log(contents);
   return (
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
     // <main className="flex min-h-screen flex-col items-center p-24">

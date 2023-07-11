@@ -1,0 +1,16 @@
+pre {
+  background: #25292f !important;
+  color: #fff;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+  white-space: pre-wrap;
+}
+
+/* code.language-javascript,
+code.language-bash {
+  margin: 5rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+  white-space: pre-wrap;
+} */
