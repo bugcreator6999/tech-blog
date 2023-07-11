@@ -28,13 +28,6 @@ export async function generateStaticParams() {
     };
   });
   return [...id];
-  // return contents.map((content) => ({
-  //   id: content.id,
-  // }));
-
-  // return contents.map(({ id }) => ({
-  //   id,
-  // }));
 }
 
 export default async function BlogDetail({
